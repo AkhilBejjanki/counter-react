@@ -1,0 +1,136 @@
+/* 🎨 Modern Counter App Styles with Glassmorphism */
+
+:root {
+  --primary-color: #6c63ff;
+  --secondary-color: #ff6584;
+  --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass-background: rgba(255, 255, 255, 0.25);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.18);
+  --box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background-gradient);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  background: var(--glass-background);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: var(--glass-border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem 3rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, #e2e2e2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 1.5rem 0;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--glass-background);
+  color: white;
+  border: var(--glass-border);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+  position: relative;
+  top: 0;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+  transition: all 0.05s;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+button:last-of-type {
+  background: var(--secondary-color);
+  border: none;
+  box-shadow: 0 6px 0 #d64d69;
+}
+
+button:last-of-type:hover {
+  background: #ff4f75;
+  box-shadow: 0 8px 0 #d64d69;
+}
+
+button:last-of-type:active {
+  box-shadow: 0 2px 0 #d64d69;
+  background: #ff3d66;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
